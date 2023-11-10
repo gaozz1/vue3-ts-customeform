@@ -45,6 +45,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
    。。。
 
 ### API 设计
+![Coverage](https://img.shields.io/codecov/Jokcy/vjsf-imooc/branch/11-4)
 
 `jsx
 <JsonSchemaForm
