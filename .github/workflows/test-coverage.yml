@@ -20,7 +20,6 @@ jobs: # 执行的任务
       - run: npm install
       - run: npm run test:unit:cov # CI=true npm run test:cov
         env: # 环境变量 process.env
-          CODECOV_TOKEN: b006ab18-f041-44c4-aa2b-d6e75a7a807b
           CI: true # process.env.CI
 
       - name: Upload coverage to Codecov # 代码覆盖率
