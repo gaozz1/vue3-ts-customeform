@@ -18,12 +18,13 @@ jobs: # 执行的任务
         with:
           node-version: ${{ matrix.node-version }}
       - run: npm install
-      - run: npm run test:unit:unit # CI=true npm run test:cov
+      - run: npm run test:unit:cov # CI=true npm run test:cov
         env: # 环境变量 process.env
+          CODECOV_TOKEN: b006ab18-f041-44c4-aa2b-d6e75a7a807b
           CI: true # process.env.CI
 
       - name: Upload coverage to Codecov # 代码覆盖率
-        uses: codecov/codecov-action@v1 # codecov 官方推出的可复用的 action
+        uses: codecov/codecov-action@v3 # codecov 官方推出的可复用的 action
         with: # 传递参数
           flags: unittests # 标识
           file: ./coverage/clover.xml # 读取覆盖率数据的地方

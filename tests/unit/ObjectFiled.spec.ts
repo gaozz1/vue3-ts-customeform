@@ -3,6 +3,8 @@ import { defineComponent, h } from 'vue'
 
 import JsonSchemaForm, { NumberFiled, StringField } from '../../lib'
 
+import TestComponent from './utils/TestComponent'
+
 describe('ObjectFiled', () => {
   let schema: any = undefined
 
@@ -21,7 +23,7 @@ describe('ObjectFiled', () => {
   })
 
   it('should render properties to correct fileds', async () => {
-    const wrapper = mount(JsonSchemaForm, {
+    const wrapper = mount(TestComponent, {
       props: {
         schema: schema,
         value: {},

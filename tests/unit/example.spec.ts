@@ -3,11 +3,12 @@ import { defineComponent, h } from 'vue'
 // import HelloWorld from '@/components/HelloWorld.vue'
 
 import JsonSchemaForm, { NumberFiled } from '../../lib'
+import TestComponent from './utils/TestComponent'
 
 describe('JsonSchemaForm', () => {
   it('should render correct number field', async () => {
     let value = ''
-    const wrapper = mount(JsonSchemaForm, {
+    const wrapper = mount(TestComponent, {
       props: {
         schema: {
           type: 'number',
