@@ -1,11 +1,16 @@
-import { inject } from 'vue'
-import { commonFieldDefine, Theme } from './types'
+import { inject, Ref } from 'vue'
+import { commonFieldDefine, CommonWidgetDefine, Theme, Schema } from './types'
 
 export const SchemaFormContextKey = Symbol()
 
 export function useVJSFContext() {
-  const context: { SchemaItem: commonFieldDefine } | undefined =
-    inject(SchemaFormContextKey)
+  const context:
+    | {
+        SchemaItem: commonFieldDefine
+        formatMapRef: Ref<{ [key: string]: CommonWidgetDefine }>
+        transformSchemaRef: Ref<(schema: Schema) => Schema>
+      }
+    | undefined = inject(SchemaFormContextKey)
 
   if (!context) {
     throw Error('SchemaForm needed')
